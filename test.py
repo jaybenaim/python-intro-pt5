@@ -1,25 +1,33 @@
-import pizza_maker as toppings
+# import pizza_maker as toppings
+def display_prices(): 
+    for topping, price in toppings.items():
+        print(line_break) 
+        print(f"{topping}: ${price}0")
 
+    for topping, price in toppings.items(): 
+        print(line_break)
+        print(f"{topping}: ${price}0")
+        print(line_break)
+        selected_toppings = input(f"How many {topping} toppings would you like to add to pizza number \n")
+        
 def pizza_maker():
     print('How many pizzas do you want to order?')
     quantity_pizza = int(input())
-    # order_num = toppings.pizza_order_num()
-    # toppings.pizza_order_num
     ind_pizza = range(1,(quantity_pizza+1))
     print(yes_or_no(get_quantity(quantity_pizza)))
     for each_pizza in ind_pizza:
         display_prices()
-        print(f'How many toppings for pizza {each_pizza}?') # add this for toppings 
-        num_toppings = int(input()) ### repitiotion error here somehere 
-        print(f'You have ordered a pizza with {num_toppings} toppings to pizza {each_pizza} ')
+        print(f'How many toppings for pizza {each_pizza}?')
+        num_toppings = int(input())
+        print(f'You have ordered a pizza with {num_toppings} toppings')
         
 def yes_or_no(input_val):
     # check if input value is yes
     if input_val == "yes":
-        # run toppings function  
+        #run toppings function
         return display_prices()
     elif input_val == "no":
-        return pizza_maker()
+        return pizza_maker
     else:
         return "Something went wrong" 
 
@@ -29,24 +37,12 @@ def get_quantity(input_val):
     enter \'yes\' or \'no\' \n''')
     return confirm
   
-def display_prices(): 
-    
-    for topping, price in toppings.toppings.items():
-        print(toppings.line_break) 
-        print(f"{topping}: ${price}0")
 
-    for topping, price in toppings.toppings.items(): 
-        print(toppings.line_break)
-        print(f"{topping}: ${price}0")
-        print(toppings.line_break)
-        selected_toppings = f"How many {topping} toppings would you like to add to this pizza.  \n"
-        selected_toppings = input(selected_toppings)
 pizza_quantity = []
-pizza_maker()
 # quantity = input('How many pizzas do you want to order?\n')
 # print(yes_or_no(get_quantity(quantity)))
 
-
+pizza_maker()
 
 # handle bulk orders of pizzas
 # pizzas have various toppings on each
@@ -71,3 +67,44 @@ pizza_maker()
 
 #### make topping selector next 
 # continued in pizza_maker 
+# import exercise12 as pizza_maker
+line_break = "-------------------------------------------------------"
+# a = pizza_maker.topping[0]
+# print(a)
+# print(new_pizza_order())
+
+toppings = { 
+    'meat': 1.50,
+    'cheese': 1.00,
+    'veggie': 0.50
+}
+meat = [ 
+    'bacon', 
+    'pepperoni', 
+    'sausage',
+    'chicken', 
+    'proscuito' 
+]
+cheese = [ 
+    'feta', 
+    'mozz', 
+    'extra' 
+]
+veggie = [
+    'pineapple', 
+    'pepper', 
+    'olive', 
+    'mushroom'
+] 
+
+
+# # or 
+# all_toppings = 0.50 
+# topping = [
+#     'pepperoni',
+#     'olives'
+# ]
+
+
+# display_prices()
+# print(toppings['meat'])
