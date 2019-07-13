@@ -1,4 +1,4 @@
-import exercise12
+import exercise12 as pizza_maker
 
-a = exercise12.topping[0]
+a = pizza_maker.topping[0]
 print(a)
