@@ -1,13 +1,18 @@
 import pizza_maker as toppings
 
 def pizza_maker():
-    print('How many pizzas do you want to order?')
-    quantity_pizza = int(input())
+    print('How many pizzas do you want to order?\n')
+    quantity_pizza = input()
     # order_num = toppings.pizza_order_num()
     # toppings.pizza_order_num
-    ind_pizza = range(1,(quantity_pizza+1))
+    pizzas = int(quantity_pizza)
+    pizzas_ordered = []
+
+    for every_pizza in pizzas: 
+        pizzas_ordered.append(every_pizza)
+    # ind_pizza = range(1,(quantity_pizza+1))
     print(yes_or_no(get_quantity(quantity_pizza)))
-    for each_pizza in ind_pizza:
+    for each_pizza in pizzas_ordered:
         display_prices()
         print(f'How many toppings for pizza {each_pizza}?') # add this for toppings 
         num_toppings = int(input()) ### repitiotion error here somehere 
@@ -21,7 +26,7 @@ def yes_or_no(input_val):
     elif input_val == "no":
         return pizza_maker()
     else:
-        return "Something went wrong" 
+        return pizza_maker() 
 
 def get_quantity(input_val):
     pizza_quantity.append(input_val)
@@ -29,12 +34,14 @@ def get_quantity(input_val):
     enter \'yes\' or \'no\' \n''')
     return confirm
   
-def display_prices(): 
-    total = 0
+def display_all_toppings(): 
     for topping, price in toppings.toppings.items():
         print(toppings.line_break) 
         print(f"{topping}: ${price}0")
 
+def display_prices(): 
+    total = 0
+    display_all_toppings()
     for topping, price in toppings.toppings.items(): 
         print(toppings.line_break)
         print(f"{topping}: ${price}0")
@@ -43,13 +50,16 @@ def display_prices():
         selected_toppings = input(selected_toppings)
         # total calculator 
         counter = 0 
-        while int(selected_toppings) > counter: 
+        while counter > int(selected_toppings): 
             total += toppings.toppings['meat']
             counter += 1 
             if counter == selected_toppings: 
                 break 
+            else: 
+                counter += 1 
+                print(total)
 
-    print(total)
+    print(price) 
 pizza_quantity = []
 pizza_maker()
 # quantity = input('How many pizzas do you want to order?\n')
