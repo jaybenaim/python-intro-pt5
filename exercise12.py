@@ -3,11 +3,11 @@ import pizza_maker as toppings
 def pizza_maker():
     print('How many pizzas do you want to order?')
     quantity_pizza = int(input())
-    indiv_pizza = range(1,(quantity_pizza+1))
+    ind_pizza = range(1,(quantity_pizza+1))
     print(yes_or_no(get_quantity(quantity_pizza)))
-    for x in indiv_pizza:
+    for each_pizza in ind_pizza:
         toppings.display_prices()
-        print(f'How many toppings for pizza {x}?')
+        print(f'How many toppings for pizza {each_pizza}?')
         num_toppings = int(input())
         print(f'You have ordered a pizza with {num_toppings} toppings')
         
@@ -15,10 +15,9 @@ def yes_or_no(input_val):
     # check if input value is yes
     if input_val == "yes":
         #run toppings function
-        print(toppings.display_prices())
-        return 'What toppings would you like?'
+        return toppings.display_prices()
     elif input_val == "no":
-        return quantity
+        return pizza_maker
     else:
         return "Something went wrong" 
 

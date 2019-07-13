@@ -5,9 +5,9 @@ line_break = "-------------------------------------------------------"
 # print(new_pizza_order())
 
 toppings = { 
-    'meat': 0.50,
+    'meat': 1.50,
     'cheese': 1.00,
-    'veggie': 0.35
+    'veggie': 0.50
 }
 meat = [ 
     'bacon', 
@@ -38,9 +38,16 @@ veggie = [
 
 def display_prices(): 
     for topping, price in toppings.items():
-        
-        print(f"{topping}: {price}")
+        print(line_break) 
+        print(f"{topping}: ${price}0")
 
+    for topping, price in toppings.items(): 
+        print(line_break)
+        print(f"{topping}: ${price}0")
+        print(line_break)
+        selected_toppings = input(f"How many {topping} toppings would you like to add to pizza number \n")
+        
+        
 
 # display_prices()
 # print(toppings['meat'])
