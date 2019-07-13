@@ -30,7 +30,7 @@ def get_quantity(input_val):
     return confirm
   
 def display_prices(): 
-    
+    total = 0
     for topping, price in toppings.toppings.items():
         print(toppings.line_break) 
         print(f"{topping}: ${price}0")
@@ -41,6 +41,15 @@ def display_prices():
         print(toppings.line_break)
         selected_toppings = f"How many {topping} toppings would you like to add to this pizza.  \n"
         selected_toppings = input(selected_toppings)
+        # total calculator 
+        counter = 0 
+        while int(selected_toppings) > counter: 
+            total += toppings.toppings['meat']
+            counter += 1 
+            if counter == selected_toppings: 
+                break 
+
+    print(total)
 pizza_quantity = []
 pizza_maker()
 # quantity = input('How many pizzas do you want to order?\n')
