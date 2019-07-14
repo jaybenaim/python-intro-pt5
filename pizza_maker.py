@@ -1,13 +1,18 @@
 # import exercise12 as pizza_maker
 def line(): 
- return line_break = "-------------------------------------------------------"
+ return "--------------------------"
 # a = pizza_maker.topping[0]
 # print(a)
 # print(new_pizza_order())
+sizes =  { 
+        'small': 4.00,
+        'medium': 4.95, 
+        'large': 5.50,
+        'xlarge': 7.00
+    }
 pizza = { 
-    'size': 
     'toppings': [], 
-    'price': []
+    'price': 0
 }
 toppings = { 
     'meat': 1.50,
