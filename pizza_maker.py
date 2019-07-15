@@ -5,10 +5,10 @@ def line():
 # print(a)
 # print(new_pizza_order())
 sizes =  { 
-        'small': 4.00,
-        'medium': 4.95, 
-        'large': 5.50,
-        'xlarge': 7.00
+        'Small': 4.00,
+        'Medium': 4.5, 
+        'Large': 5.50,
+        'X-large': 7.00
     }
 pizza = { 
     'toppings': [], 
